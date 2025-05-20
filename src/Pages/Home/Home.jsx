@@ -10,17 +10,19 @@ import Binodon from './Components/Binodon';
 
 const Home = () => {
     return (
-        <div className="w-11/12 md:w-8/12 mx-auto">
+        <div className="w-11/12 lg:w-8/12 mx-auto">
 
-            <div className="flex flex-col md:flex-row justify-center gap-5">
-
-                <div className="w-full md:w-3/12">
-                    <LeftUp />
-                </div>
-                <div className="w-full md:w-6/12 border-y md:border-x md:border-y-0 border-gray-300 px-2">
+            <div className="flex flex-col lg:flex-row justify-center gap-5">
+                <div className="w-full lg:w-6/12 border-y lg:border-x lg:border-y-0 border-gray-300 px-2 lg:hidden">
                     <MiddleUp />
                 </div>
-                <div className="w-full md:w-3/12">
+                <div className="w-full lg:w-3/12">
+                    <LeftUp />
+                </div>
+                <div className="hidden lg:block w-full md:w-6/12 border-y md:border-x md:border-y-0 border-gray-300 px-2">
+                    <MiddleUp />
+                </div>
+                <div className="w-full lg:w-3/12">
                     <RightUp />
                 </div>
             </div>
@@ -51,7 +53,7 @@ const Home = () => {
                     className="mx-auto"
                     src="https://s0.2mdn.net/simgad/2587603031845463405"
                     alt=""
-                    
+
                 />
             </div>
             <div className="mt-5">
@@ -67,7 +69,7 @@ const Home = () => {
             <div className="mt-5">
                 <Binodon />
             </div>
-            
+
         </div>
     );
 };

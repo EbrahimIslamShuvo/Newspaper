@@ -35,9 +35,9 @@ const National = () => {
             <Heading name="জাতীয়" />
             <div className="mt-5">
                 {national.length >= 3 ? (
-                    <div className="flex flex-wrap justify-center gap-5">
+                    <div className="flex flex-wrap lg:flex-nowrap lg:flex-row justify-center gap-5">
                         {/* Left: Big Card */}
-                        <div className="w-full md:w-5/12 mt-10">
+                        <div className="w-full lg:w-5/12 mt-10">
                             <Card
                                 thumbnail={national[0].thumbnail}
                                 id={national[0].thumbnail}
@@ -48,7 +48,7 @@ const National = () => {
                         </div>
 
                         {/* Center: Two Small Cards */}
-                        <div className="w-full md:w-3/12 flex flex-col gap-5 mt-10 border-x px-5 border-gray-300">
+                        <div className="w-full lg:w-4/12 md:hidden lg:block flex flex-col gap-5 mt-10 border-x px-5 border-gray-300">
                             <Card
                                 thumbnail={national[1].thumbnail}
                                 id={national[1].thumbnail}
@@ -66,20 +66,37 @@ const National = () => {
                         </div>
 
                         {/* Right: Sidebar */}
-                        <div className="w-full md:w-3/12">
-                            <div className="flex justify-center items-center gap-25 border-b mb-3">
+                        <div className="w-full lg:w-3/12 flex gap-8">
+                            <div className="hidden md:block lg:hidden ">
+                                <div className="w-full flex flex-col gap-5 mt-10 ">
+                                    <Card
+                                        thumbnail={national[1].thumbnail}
+                                        id={national[1].thumbnail}
+                                        title={national[1].title}
+                                        short_description={national[1].short_description}
+                                        width="w-full"
+                                    />
+                                    <Card
+                                        thumbnail={national[2].thumbnail}
+                                        title={national[2].title}
+                                        id={national[2].thumbnail}
+                                        short_description={national[2].short_description}
+                                        width="w-full"
+                                    />
+                                </div>
+                            </div>
+                            <div className="">
+                                <div className="flex justify-center items-center gap-25 md:gap-13 lg:gap-25 border-b mb-3">
                                 <h1
-                                    className={`font-semibold pb-1 cursor-pointer ${
-                                        selectedTab === 'latest' ? 'text-blue-600 border-b-2 border-blue-600' : ''
-                                    }`}
+                                    className={`font-semibold pb-1 cursor-pointer ${selectedTab === 'latest' ? 'text-blue-600 border-b-2 border-blue-600' : ''
+                                        }`}
                                     onClick={() => setSelectedTab('latest')}
                                 >
                                     সর্বশেষ
                                 </h1>
                                 <h1
-                                    className={`font-semibold pb-1 cursor-pointer ${
-                                        selectedTab === 'trending' ? 'text-blue-600 border-b-2 border-blue-600' : ''
-                                    }`}
+                                    className={`font-semibold pb-1 cursor-pointer ${selectedTab === 'trending' ? 'text-blue-600 border-b-2 border-blue-600' : ''
+                                        }`}
                                     onClick={() => setSelectedTab('trending')}
                                 >
                                     পঠিত
@@ -95,6 +112,7 @@ const National = () => {
                                         width="w-60"
                                     />
                                 ))}
+                            </div>
                             </div>
                         </div>
                     </div>

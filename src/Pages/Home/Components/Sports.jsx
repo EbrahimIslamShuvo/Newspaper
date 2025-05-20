@@ -28,10 +28,10 @@ const Sports = () => {
             <div className="mb-5">
                 <Heading name="খেলাধুলা" />
             </div>
-            <div className="flex justify-center gap-5">
-                <div className="w-4/12">
+            <div className="flex flex-col lg:flex-row justify-center gap-5">
+                <div className="lg:w-4/12 ">
                     {topTrending.length === 2 && (
-                        <div className="">
+                        <div className="flex flex-col md:flex-row lg:flex-col md:gap-10">
                             <Card
                                 thumbnail={topTrending[0].thumbnail}
                                 title={topTrending[0].title}
@@ -39,17 +39,28 @@ const Sports = () => {
                                 short_description={topTrending[0].short_description}
                                 width="w-140"
                             />
-                            <MiniCardTwo
-                                thumbnail={topTrending[1].thumbnail}
-                                title={topTrending[1].title}
-                                id={topTrending[1].id}
-                                short_description={topTrending[1].short_description}
-                                width="w-140"
-                            />
+                            <div className="hidden md:block lg:hidden">
+                                <Card
+                                    thumbnail={topTrending[1].thumbnail}
+                                    title={topTrending[1].title}
+                                    id={topTrending[1].id}
+                                    short_description={topTrending[1].short_description}
+                                    width="w-160"
+                                />
+                            </div>
+                            <div className="block md:hidden lg:block">
+                                <MiniCardTwo
+                                    thumbnail={topTrending[1].thumbnail}
+                                    title={topTrending[1].title}
+                                    id={topTrending[1].id}
+                                    short_description={topTrending[1].short_description}
+                                    width="w-140"
+                                />
+                            </div>
                         </div>
                     )}
                 </div>
-                <div className="w-5/12 flex flex-col gap-10 border-x border-gray-300 px-5">
+                <div className="lg:w-5/12 flex flex-col gap-10 lg:border-x border-gray-300 px-5">
                     {lessTrending.map(news => (
                         <MiniCardTwo
                             key={news.id}
@@ -61,7 +72,7 @@ const Sports = () => {
                         />
                     ))}
                 </div>
-                <div className="w-3/12">
+                <div className="lg:w-3/12 flex justify-center items-start">
                     <img src="https://s0.2mdn.net/sadbundle/17388607693865814722/gif.gif" alt="" />
                 </div>
             </div>

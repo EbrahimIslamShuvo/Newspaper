@@ -32,10 +32,10 @@ const SingleNews = () => {
 
     return (
         <div className="w-11/12 md:w-8/12 mx-auto">
-            <div className="flex flex-col md:flex-row gap-10">
+            <div className="flex flex-col lg:flex-row gap-10">
 
                 {/* Main News Content */}
-                <div className="w-full md:w-9/12 mt-20">
+                <div className="w-full lg:w-9/12 mt-20">
                     {news ? (
                         <div className="space-y-5">
                             <div className="flex items-center gap-2 text-xl font-semibold">
@@ -43,7 +43,7 @@ const SingleNews = () => {
                                 <p>{(news.category).name}</p>
                             </div>
                             <h1 className="text-4xl leading-13 font-bold">{news.title}</h1>
-                            <div className="flex justify-start gap-20 text-gray-500 -mt-5">
+                            <div className="flex justify-start md:gap-20 gap-10 text-gray-500 -mt-5">
                                 <div className="flex items-center gap-1">
                                     <BsVectorPen />
                                     <p>{news.reporter}</p>
@@ -59,7 +59,7 @@ const SingleNews = () => {
                             </div>
                             <img className="w-full rounded -mt-2" src={news.thumbnail} alt={news.title} />
                             <div className=" flex flex-col gap-5 w-11/12 mx-auto text-justify mt-10">
-                                <p className="text-3xl font-bold">{news.subtitle}</p>
+                                <p className="text-3xl font-bold text-start">{news.subtitle}</p>
                                 <p className='text-gray-600'>{news.description_1}</p>
                                 <img className='w-80 mx-auto' src="https://s0.2mdn.net/sadbundle/17388607693865814722/gif.gif" alt="" />
                                 <p className='text-gray-600'>{news.description_2}</p>
@@ -71,7 +71,7 @@ const SingleNews = () => {
                                     <div className="flex items-center gap-2.5">
                                         {
                                             (news.tags).map(tag => (
-                                                <p className='bg-sky-100 p-2 rounded'>{tag}</p>
+                                                <p className='bg-sky-100 p-2 rounded text-sm md:text-base'>{tag}</p>
                                             ))
                                         }
                                     </div>
@@ -84,8 +84,10 @@ const SingleNews = () => {
                 </div>
 
                 {/* Related News */}
-                <div className="w-full md:w-3/12 mt-15">
-                    <img className='mb-10' src="https://s0.2mdn.net/sadbundle/17388607693865814722/gif.gif" alt="" />
+                <div className="w-full lg:w-3/12 mt-15">
+                    <div className="flex justify-center items-start">
+                        <img className='mb-10' src="https://s0.2mdn.net/sadbundle/17388607693865814722/gif.gif" alt="" />
+                    </div>
                     <h2 className="text-lg font-semibold mb-3 border-b pb-2">এই বিভাগের অন্যান্য সংবাদ</h2>
                     <div className="space-y-4">
                         {relatedNews.slice(0, 5).map(item => (
@@ -103,7 +105,7 @@ const SingleNews = () => {
             </div>
             <div className="mt-10">
                 <Heading name={"সর্বশেষ"}></Heading>
-                <div className="mt-4 grid grid-cols-3 gap-10">
+                <div className="mt-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
                     {
                         latestNews.map(news => (
                             <div className="">

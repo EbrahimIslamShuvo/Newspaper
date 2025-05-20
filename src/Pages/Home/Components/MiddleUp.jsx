@@ -30,7 +30,7 @@ const MiddleUp = () => {
                                     <NavLink to={`/news/${topNews[0].id}`} className='font-semibold text-xl text-center mt-5'>{topNews[0].title}</NavLink>
                                     <p className='text-gray-500 mt-3'>{topNews[0].short_description}</p>
                                 </div>
-                                <div className="flex items-center justify-center gap-5 mt-5 border-b pb-5 border-gray-300">
+                                <div className="flex items-center justify-center gap-5 mt-5 border-b pb-5 border-gray-300 md:ms-20 lg:ms-0">
                                     <div className="">
                                         <Card id={`${topNews[1].id}`} thumbnail={`${topNews[1].thumbnail}`} title={`${topNews[1].title}`} short_description={`${topNews[1].short_description}`} width={`w-100`}></Card>
                                     </div>
@@ -38,7 +38,7 @@ const MiddleUp = () => {
                                         <Card id={`${topNews[2].id}`} thumbnail={`${topNews[2].thumbnail}`} title={`${topNews[2].title}`} short_description={`${topNews[0].short_description}`} width={`w-70`}></Card>
                                     </div>
                                 </div>
-                                <div className="mt-2">
+                                <div className="mt-2 md:ms-20 lg:ms-0">
                                     <div className=" border-b pb-5 border-gray-300">
                                         <Card id={`${topNews[3].id}`}  title={`${topNews[3].title}`} short_description={`${topNews[0].short_description}`}></Card>
                                     </div>

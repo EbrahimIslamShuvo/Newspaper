@@ -18,9 +18,9 @@ const LeftUp = () => {
         <div>
             <div className='mt-10'>
                 <Heading name={"সর্বশেষ"}></Heading>
-                <div className="">
+                <div className="grid md:grid-cols-2 lg:grid-cols-1">
                     {latestNews.map(news => (
-                        <div className="border-b border-gray-400 pb-2">
+                        <div className="border-b border-gray-400 pb-2 md:mr-10">
                             <Card id={`${news.id}`} title={`${news.title}`}></Card>
                         </div>
                     ))}
