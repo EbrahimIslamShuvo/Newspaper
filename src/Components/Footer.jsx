@@ -25,7 +25,7 @@ const Footer = () => {
                     <a className="link link-hover">Press kit</a>
                 </nav>
                 <nav>
-                    <div className="flex gap-5">
+                    <div className="flex flex-col gap-5">
                         <img className='w-50' src="https://cdn.freebiesupply.com/logos/large/2x/available-on-the-app-store-logo-png-transparent.png" alt="" />
                         <img className='w-50' src="https://static.vecteezy.com/system/resources/previews/024/170/871/non_2x/badge-google-play-and-app-store-button-download-free-png.png" alt="" />
                     </div>
